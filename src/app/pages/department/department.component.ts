@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { DepartmentService } from '../../core/service/department.service';
-import { IDepartment } from '../../core/model/interface/department';
+import { IDepartment } from '../../core/model/interface/idepartment';
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Department } from '../../core/model/class/dept';
@@ -78,7 +78,7 @@ export class DepartmentComponent implements OnInit {
           debugger
         }
       })
-    }else{
+    } else {
       alert("DELETE operation cancelled")
     }
 

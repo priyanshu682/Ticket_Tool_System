@@ -1,10 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ParentCategoryService } from '../../core/service/parent-category.service';
-import { IParentCategory } from '../../core/model/interface/parent-category';
+import { IParentCategory } from '../../core/model/interface/iparent-category';
 import { ParentCategory } from '../../core/model/class/parent-category';
 import { FormsModule } from '@angular/forms';
 import { DepartmentService } from '../../core/service/department.service';
-import { IDepartment } from '../../core/model/interface/department';
+import { IDepartment } from '../../core/model/interface/idepartment';
 
 @Component({
   selector: 'app-parent-category',
@@ -17,7 +17,7 @@ export class ParentCategoryComponent implements OnInit {
   parentCategorySrv = inject(ParentCategoryService)
   deptSrv = inject(DepartmentService)
   parentCategoryList: IParentCategory[] = []
-  deptList:IDepartment[]=[]
+  deptList: IDepartment[] = []
   parentCategoryObj: ParentCategory = new ParentCategory
 
   ngOnInit(): void {
@@ -58,14 +58,14 @@ export class ParentCategoryComponent implements OnInit {
     this.parentCategoryObj = data
     debugger
   }
-  onReset(){
+  onReset() {
     this.parentCategoryObj = new ParentCategory
   }
 
   updateParentCategory() {
     this.parentCategorySrv.updateParentCategory(this.parentCategoryObj).subscribe((res: any) => {
       debugger
-      if (res.result){
+      if (res.result) {
         debugger
         alert("Parent Category Updated Successfully")
         this.getParentCategoryList()
@@ -78,7 +78,7 @@ export class ParentCategoryComponent implements OnInit {
     this.onReset()
   }
 
-  deleteParentCategory(id:number){
+  deleteParentCategory(id: number) {
     const isDelete = confirm("Are you sure you want to DELETE?")
     debugger
     if (isDelete) {
@@ -93,7 +93,7 @@ export class ParentCategoryComponent implements OnInit {
           debugger
         }
       })
-    }else{
+    } else {
       alert("DELETE operation cancelled")
       debugger
     }
