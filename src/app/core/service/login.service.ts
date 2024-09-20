@@ -13,4 +13,7 @@ export class LoginService {
   login(body: Login) {
     return this.masterSrv.post(`${Constants.API_URL}${Constants.LOGIN_METHOD}`, body)
   }
+  getAllRoles(){
+    return this.masterSrv.get(`${Constants.API_URL}${Constants.GET_ALL_ROLES}`)
+  }
 }
