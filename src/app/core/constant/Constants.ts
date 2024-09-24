@@ -28,5 +28,14 @@ export const Constants = {
     CREATE_EMPLOYEE: "CreateEmployee",
     UPDATE_EMPLOYEE: "UpdateEmployee",
     DELETE_EMPLOYEE_BY_ID: "DeleteEmployee?id="
+  },
+  TICKET_METHODS:{
+    CREATE_NEW_TICKET:"CreateNewTicket",
+    GET_ALL_TICKETS:"GetAllTickets",
+    GET_TICKET_CREATED_BY_EMP_ID:"GetTicketsCreatedByEmpId?empId=",
+    GET_ASSIGNED_TICKET_BY_EMP_ID:"GetAssignedTicketsByEmpId?empId=",
+    START_TICKET:"startTicket?id=",
+    CLOSE_TICKET:"closeTicket?id="
+
   }
 }
